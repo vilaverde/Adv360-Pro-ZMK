@@ -25,21 +25,25 @@
         copy: copy {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LEFT_COMMAND &kp C>;
+            bindings = <&kp K_COPY>;
             label = "COPY";
         };
 
         paste: paste {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LEFT_COMMAND &kp C>;
+            bindings = <&kp K_PASTE>;
             label = "PASTE";
         };
 
         custom_screenshot: custom_screenshot {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LS(LC(LEFT_COMMAND)) &kp NUMBER_4>;
+            bindings =
+                <&macro_press>,
+                <&kp LS(LC(LEFT_COMMAND)) &kp NUMBER_4>,
+                <&macro_release>;
+
             label = "CUSTOM_SCREENSHOT";
         };
     };
